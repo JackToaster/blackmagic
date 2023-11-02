@@ -27,13 +27,13 @@ SRC =              \
 	adiv5.c        \
 	adiv5_jtag.c   \
 	adiv5_swd.c    \
-	at32f43x.c     \
 	command.c      \
 	cortex.c       \
 	cortexa.c      \
 	cortexm.c      \
 	crc32.c        \
-	efm32.c        \
+	hc32l110.c     \
+	at32f43x.c     \
 	exception.c    \
 	gdb_if.c       \
 	gdb_main.c     \
@@ -41,7 +41,6 @@ SRC =              \
 	gdb_packet.c   \
 	gdb_reg.c      \
 	hex_utils.c    \
-	hc32l110.c     \
 	imxrt.c        \
 	jtag_devs.c    \
 	jtag_scan.c    \
@@ -84,6 +83,10 @@ SRC =              \
 	target.c       \
 	target_flash.c \
 	target_probe.c
+
+# Targets removed for the sake of making it fit in flash :(
+# TODO: Optimize to fit these targets
+# efm32.c
 
 ifeq (,$(filter all_platforms,$(MAKECMDGOALS)))
 include $(PLATFORM_DIR)/Makefile.inc
